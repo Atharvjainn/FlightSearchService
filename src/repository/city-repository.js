@@ -18,6 +18,7 @@ class CityRepository {
                     id : cityId,
                 }
             })
+            return true
         } catch (error) {
             throw(error)
         }
@@ -25,11 +26,15 @@ class CityRepository {
 
     async UpdateCity(cityId,data){
         try {
-            const city = await City.update(data,{
-                where:{
-                    id : cityId,
-                }
-            })
+            // const city = await City.update(data,{
+            //     where:{
+            //         id : cityId,
+            //     }
+            // })
+
+            const city = await City.findByPk(cityId);
+            city.name = data.name
+            await city.save()
             return city;
         } catch (error) {
             console.log(error);
@@ -39,6 +44,13 @@ class CityRepository {
     async getCity(cityId){
         try {
             const city = await City.findByPk(cityId)
+            // const city = await City.findOne({
+            //     where : {
+            //         id: cityId
+            //     }
+            // })
+            console.log(city);
+            
             return city;
         } catch (error) {
             console.log(error);
