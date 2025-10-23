@@ -13,8 +13,6 @@ const setupAndStartServer = async () => {
     
     app.listen(PORT,() => {
         console.log(`Server started at ${PORT}`); 
-        const Cityrepo = new cityclass()
-        Cityrepo.DeleteCity({cityId:1})
     })
 }
 

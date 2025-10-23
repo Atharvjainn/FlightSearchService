@@ -15,7 +15,7 @@ class CityRepository {
         try {
             await City.destroy({
                 where:{
-                    id : cityId
+                    id : cityId,
                 }
             })
         } catch (error) {
@@ -27,7 +27,7 @@ class CityRepository {
         try {
             const city = await City.update(data,{
                 where:{
-                    id : cityId
+                    id : cityId,
                 }
             })
             return city;
