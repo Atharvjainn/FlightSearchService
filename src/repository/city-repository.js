@@ -1,5 +1,5 @@
 const { where } = require('sequelize');
-const {City} = require('../models/index')
+const { City } = require('../models/index')
 
 class CityRepository {
     async CreateCity({name}){
@@ -52,6 +52,15 @@ class CityRepository {
             console.log(city);
             
             return city;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async getAllcities(){
+        try {
+            const cities = await City.findAll()
+            return cities;
         } catch (error) {
             console.log(error);
         }
