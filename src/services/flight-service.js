@@ -32,6 +32,16 @@ class FlightService{
             throw(error)
         }
     }
+
+    async GetAllFlights(data){
+        try {
+            const flights = await this.flightRepository.GetAllFlights(data)
+            return flights;
+        } catch (error) {
+            console.log(error);
+            throw(error)
+        }
+    }
 }
 
 
