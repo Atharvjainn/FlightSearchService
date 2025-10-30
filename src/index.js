@@ -5,6 +5,7 @@ const ApiRoutes = require('./routes/index')
 const { City,airport } = require('./models/index')
 const db = require('./models/index')
 
+
 const setupAndStartServer = async () => {
     const app = express()
 
@@ -34,7 +35,6 @@ const setupAndStartServer = async () => {
 
         // const airports = await city.getAirports()
         // console.log(JSON.stringify(airports,null,2));     // this works when model is synced
-        
     })
 }
 
