@@ -9,9 +9,9 @@ router.delete('/city/:id',CityController.destroy)
 router.patch('/city/:id',CityController.update)
 router.get('/city',CityController.getAllcities)
 
-router.post('/flight',FlightMiddleware.validateCreateFlight,FlightController.create)
-router.get("/flight/:id",FlightController.getFlight)
-router.get("/flight",FlightController.getAllFlights)
+router.post('/flights',FlightMiddleware.validateCreateFlight,FlightController.create)
+router.get("/flights/:id",FlightController.getFlight)
+router.get("/flights",FlightController.getAllFlights)
 
 router.post('/airport',AirportController.create)
 router.get("/airport/:id",AirportController.get)
