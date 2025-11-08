@@ -1,4 +1,4 @@
-const { Op } = require('sequelize')
+const { Op, where } = require('sequelize')
 const { Flight } = require('../models/index') 
 
 class FlightRepository{
@@ -51,6 +51,20 @@ class FlightRepository{
                 where : filterobj
             })
             return flights;
+        } catch (error) {
+            console.log(error);            
+            throw(error)
+        }
+    }
+
+    async UpdateFlight(data,flightId){
+        try {
+            const flight = await Flight.update(data,{
+                where:{
+                    id : flightId
+                }
+            })
+            return flight;
         } catch (error) {
             console.log(error);            
             throw(error)
